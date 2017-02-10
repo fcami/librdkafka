@@ -1,6 +1,6 @@
 Name:		librdkafka
 Version:	0.9.2
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	The Apache Kafka C library
 
 Group:		Development/Libraries
@@ -65,6 +65,9 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 
 * Fri Nov 11 2016 Radovan Sroka <rsroka@redhat.com> 0.9.2-1
 - 0.9.2 release
