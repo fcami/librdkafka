@@ -11,6 +11,9 @@ Source0:	https://github.com/edenhill/librdkafka/archive/v%{version}.tar.gz#/%{na
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	python
+BuildRequires:  openssl-devel
+BuildRequires:  cyrus-sasl-devel
+BuildRequires:  lz4-devel
 
 %description
 Librdkafka is a C/C++ library implementation of the Apache Kafka protocol,
@@ -34,7 +37,9 @@ using librdkafka.
 %setup -q
 
 %build
-%configure
+%configure --enable-lz4 \
+           --enable-ssl \
+           --enable-sasl
 
 %make_build
 
@@ -65,6 +70,10 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Sat Mar 11 2017 Michal Luscon <mluscon@gmail.com> - 0.9.4-1
+- Update to 0.9.4
+- enable lz4, ssl, sasl
+
 * Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
