@@ -1,6 +1,6 @@
 Name:		librdkafka
-Version:	0.9.2
-Release:	2%{?dist}
+Version:	0.9.4
+Release:	1%{?dist}
 Summary:	The Apache Kafka C library
 
 Group:		Development/Libraries
