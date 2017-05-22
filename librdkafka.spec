@@ -1,5 +1,5 @@
 Name:		librdkafka
-Version:	0.9.4
+Version:	0.9.5
 Release:	1%{?dist}
 Summary:	The Apache Kafka C library
 
@@ -70,6 +70,9 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Mon May 22 2017 Radovan Sroka <rsroka@redhat.com> - 0.9.5-1
+- Update to 0.9.4
+
 * Sat Mar 11 2017 Michal Luscon <mluscon@gmail.com> - 0.9.4-1
 - Update to 0.9.4
 - enable lz4, ssl, sasl
