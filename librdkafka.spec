@@ -77,5 +77,5 @@ find %{buildroot} -name '*.a' -delete -print
 - Update to 0.9.4
 - enable lz4, ssl, sasl
 
-* Sat Mar 11 2016 Michal Luscon <mluscon@gmail.com> 0.9.2-1
+* Sat Mar 11 2017 Michal Luscon <mluscon@gmail.com> 0.9.2-1
 - epel package import
