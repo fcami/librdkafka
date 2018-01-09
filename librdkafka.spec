@@ -1,5 +1,5 @@
 Name:		librdkafka
-Version:	0.11.1
+Version:	0.11.3
 Release:	1%{?dist}
 Summary:	The Apache Kafka C library
 
@@ -70,6 +70,9 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Tue Jan 09 2018 Michal Luscon <mluscon@gmail.com> - 0.11.1-3
+- Update to upstream 0.11.3
+
 * Thu Nov 02 2017 Michal Luscon <mluscon@gmail.com> - 0.11.1-1
 - Update to upstream 0.11.1
 
