@@ -1,6 +1,6 @@
 Name:		librdkafka
 Version:	0.11.3
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	The Apache Kafka C library
 
 Group:		Development/Libraries
@@ -10,7 +10,7 @@ Source0:	https://github.com/edenhill/librdkafka/archive/v%{version}.tar.gz#/%{na
 
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
-BuildRequires:	python
+BuildRequires:	python2
 BuildRequires:  openssl-devel
 BuildRequires:  cyrus-sasl-devel
 BuildRequires:  lz4-devel
@@ -70,6 +70,10 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Thu Mar 15 2018 Iryna Shcherbina <ishcherb@redhat.com> - 0.11.3-3
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 0.11.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
