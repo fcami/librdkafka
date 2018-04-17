@@ -1,6 +1,6 @@
 Name:		librdkafka
-Version:	0.11.3
-Release:	3%{?dist}
+Version:	0.11.4
+Release:	1%{?dist}
 Summary:	The Apache Kafka C library
 
 Group:		Development/Libraries
@@ -11,9 +11,9 @@ Source0:	https://github.com/edenhill/librdkafka/archive/v%{version}.tar.gz#/%{na
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
 BuildRequires:	python2
-BuildRequires:  openssl-devel
-BuildRequires:  cyrus-sasl-devel
-BuildRequires:  lz4-devel
+BuildRequires:	openssl-devel
+BuildRequires:	cyrus-sasl-devel
+BuildRequires:	lz4-devel
 
 %description
 Librdkafka is a C/C++ library implementation of the Apache Kafka protocol,
@@ -37,9 +37,9 @@ using librdkafka.
 %setup -q
 
 %build
-%configure --enable-lz4 \
-           --enable-ssl \
-           --enable-sasl
+%configure	--enable-lz4 \
+		--enable-ssl \
+		--enable-sasl
 
 %make_build
 
@@ -49,6 +49,7 @@ make check
 %install
 %make_install
 find %{buildroot} -name '*.a' -delete -print
+find %{buildroot} -name 'rdkafka*static.pc' -delete -print
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
@@ -59,7 +60,7 @@ find %{buildroot} -name '*.a' -delete -print
 %doc README.md CONFIGURATION.md INTRODUCTION.md
 %license LICENSE LICENSE.pycrc LICENSE.snappy
 
-%files devel
+%files		devel
 %dir %{_includedir}/librdkafka
 %attr(0644,root,root) %{_includedir}/librdkafka/*
 %attr(0755,root,root) %{_libdir}/librdkafka.so
@@ -70,6 +71,9 @@ find %{buildroot} -name '*.a' -delete -print
 
 
 %changelog
+* Tue Apr 17 2018 François Cami <fcami@fedoraproject.org> - 0.11.4-1
+- Update to upstream 0.11.4
+
 * Thu Mar 15 2018 Iryna Shcherbina <ishcherb@redhat.com> - 0.11.3-3
 - Update Python 2 dependency declarations to new packaging standards
   (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
